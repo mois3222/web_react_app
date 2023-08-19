@@ -1,10 +1,12 @@
 @forward "./normalize.css";
 @forward "./App.scss";
 @forward "./Header.scss";
-@forward "./svg.scss";
+
+body {
+  background-color: #202020;
+}
 
 #root {
-  background-color: red;
   max-width: 960px;
   min-width: 490px;
 }

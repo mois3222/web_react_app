@@ -1,12 +1,115 @@
+@use "./extend.scss";
+@use "./var.scss" as v;
 .header {
+  font-family: v.$theme-font;
+  width: 100%;
+  position: sticky;
+  background-color: #202020;
+  top: 0;
+
+  &__nav {
+    border-bottom: 1.5px solid v.$theme-primary;
+  }
+
   &__ul {
-    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 1em 0;
     margin: 0;
+    width: 100%;
+  }
+
+  &__section {
+    @extend %flex;
+
+    &:nth-child(1) {
+      width: 40%;
+    }
+    &:nth-child(2) {
+      @extend %flex;
+      justify-content: space-around;
+      width: 60%;
+      li {
+        a {
+          filter: grayscale(100%) opacity(0.7);
+          transition: ease-out 0.2s all;
+
+          &:hover {
+            filter: grayscale(0%) opacity(1);
+          }
+        }
+      }
+    }
   }
 
   &__a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex;
+    text-decoration: none;
+    color: v.$theme-secondary;
+  }
+
+  &__a--menu {
+    @extend .header__a;
+    flex-direction: column;
+
+    div {
+      @extend %flex;
+      flex-direction: column;
+      gap: 0.5em;
+      height: 70%;
+      width: 100%;
+      padding-left: 10%;
+      &::before {
+        content: "";
+        @extend %menu_navbar;
+      }
+
+      span {
+        @extend %menu_navbar;
+      }
+
+      &::after {
+        content: "";
+        @extend %menu_navbar;
+        margin-bottom: 0.5em;
+      }
+
+      &:hover {
+        span {
+          opacity: 0;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__h3 {
+    display: none;
+  }
+}
+
+@media (max-width: 490px) {
+  .header__section {
+    &:nth-child(2) {
+      li {
+        display: none;
+        &:nth-child(1) {
+          display: block;
+        }
+      }
+    }
   }
 }

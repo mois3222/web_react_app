@@ -1,14 +1,14 @@
 interface Props {
   svg: JSX.Element;
-  subTitle: string;
+  anchor: string;
 }
 
-const Link = ({ subTitle, svg }: Props) => {
+const Link = ({ anchor, svg }: Props) => {
   return (
     <>
       <li className="header__li">
         <a href="#/" className="header__a">
-          <h3 className="header__h3">{subTitle}</h3>
+          <h3 className="header__h3">{anchor}</h3>
           {svg}
         </a>
       </li>

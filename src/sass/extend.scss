@@ -1,0 +1,15 @@
+@use "./var.scss" as v;
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%menu_navbar {
+  width: 70%;
+  height: 4px;
+  background-color: v.$theme-secondary;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
+}

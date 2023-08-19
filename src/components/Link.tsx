@@ -1,14 +1,18 @@
-interface Props {
-  svg: JSX.Element;
-  anchor: string;
-}
+import { useState } from "react";
+import { HTMLPropsAtributes } from "../modules/linkModule";
 
-const Link = ({ anchor, svg }: Props) => {
+const Link = ({ anchor, svg, ...props }: HTMLPropsAtributes) => {
+  const [buttonSwitch, SetButtonSwitch] = useState(false);
+
+  const tooggle = () => SetButtonSwitch(!buttonSwitch);
   return (
     <>
-      <li className="header__li">
-        <a href="#/" className="header__a">
-          <h3 className="header__h3">{anchor}</h3>
+      <li {...props}>
+        <a
+          onClick={tooggle}
+          href={`#/${anchor}`}
+          className={buttonSwitch ? `active` : `desactive`}
+        >
           {svg}
         </a>
       </li>

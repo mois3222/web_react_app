@@ -1,85 +1,80 @@
 @use "./extend.scss";
 @use "./var.scss" as v;
+@use "./mixins.scss" as mixin;
+
 .header {
-  font-family: v.$theme-font;
-  width: 100%;
   position: sticky;
-  background-color: #202020;
   top: 0;
 
-  &__nav {
-    border-bottom: 1.5px solid v.$theme-primary;
-  }
-
-  &__ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 1em 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  &__section {
+  .nav {
     @extend %flex;
+    width: 95%;
+    border-bottom: 2px solid v.$theme-primary;
+    background-color: v.$theme-nav-background;
 
-    &:nth-child(1) {
-      width: 40%;
-    }
-    &:nth-child(2) {
+    &__section {
       @extend %flex;
-      justify-content: space-around;
-      width: 60%;
-      li {
-        a {
-          filter: grayscale(100%) opacity(0.7);
-          transition: ease-out 0.2s all;
 
-          &:hover {
-            filter: grayscale(0%) opacity(1);
-          }
+      &:nth-child(1) {
+        @extend %flex;
+        width: 30%;
+      }
+      &:nth-child(2) {
+        @extend %flex;
+        justify-content: end;
+        width: 70%;
+      }
+
+      li:nth-child(1) {
+        display: block;
+      }
+
+      li {
+        display: none;
+
+        a {
+          color: v.$theme-secondary;
+          @include mixin.opacacity;
+        }
+
+        & .active {
+          filter: grayscale(0%) opacity(1);
         }
       }
     }
-  }
 
-  &__a {
-    @extend %flex;
-    text-decoration: none;
-    color: v.$theme-secondary;
-  }
-
-  &__a--menu {
-    @extend .header__a;
-    flex-direction: column;
-
-    div {
+    &__button--menu {
       @extend %flex;
       flex-direction: column;
-      gap: 0.5em;
-      height: 70%;
-      width: 100%;
-      padding-left: 10%;
-      &::before {
-        content: "";
-        @extend %menu_navbar;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      color: v.$theme-secondary;
+      width: 36%;
+      div {
+        @extend %flex;
+        flex-direction: column;
+        width: 35px;
+        height: 70%;
+        gap: v.$min;
+        &::before {
+          content: "";
+          @extend %menu_navbar;
+        }
+        span {
+          @extend %menu_navbar;
+        }
+        &::after {
+          content: "";
+          @extend %menu_navbar;
+          margin-bottom: v.$min;
+        }
       }
 
-      span {
-        @extend %menu_navbar;
-      }
-
-      &::after {
-        content: "";
-        @extend %menu_navbar;
-        margin-bottom: 0.5em;
-      }
-
-      &:hover {
+      & .active {
         span {
           opacity: 0;
         }
-
         &::before {
           transform: rotate(45deg);
         }
@@ -90,26 +85,114 @@
       }
     }
 
-    h3 {
+    &__ul {
+      @extend %flex;
+      justify-content: end;
+      list-style: none;
+      width: 100%;
+      padding: 1em 0;
       margin: 0;
-      padding: 0;
     }
   }
 
-  &__h3 {
-    display: none;
+  .burger {
+    position: absolute;
+    background-color: v.$theme-nav-background;
+    width: 70vw;
+    &.desactive {
+      height: 0;
+      .burger__a {
+        visibility: hidden;
+      }
+    }
+    &.active {
+      height: 40vh;
+      .burger__a {
+        visibility: visible;
+      }
+      transition: ease 0.5s all;
+    }
+
+    &__ul {
+      @extend %flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+
+      li {
+        display: flex;
+        justify-content: start;
+        padding-left: v.$hug;
+        margin: auto 0;
+        width: 100%;
+
+        a {
+          @extend %flex;
+          justify-content: start;
+          width: 100%;
+          align-items: center;
+          color: v.$theme-secondary;
+          text-decoration: none;
+
+          @include mixin.opacacity;
+          &.active {
+            filter: grayscale(0%) opacity(1);
+          }
+          h4 {
+            padding: 0;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
   }
 }
 
-@media (max-width: 490px) {
-  .header__section {
+@media (min-width: 760px) {
+  .nav__section {
     &:nth-child(2) {
-      li {
-        display: none;
-        &:nth-child(1) {
+      ul {
+        display: flex;
+        align-content: end;
+        justify-content: space-evenly;
+        .icon_show {
           display: block;
         }
       }
     }
+  }
+  .header__nav--burger {
+    .burger__li {
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: 1080px) {
+  .nav__section {
+    &:nth-child(2) {
+      ul {
+        display: flex;
+        align-content: end;
+        justify-content: space-evenly;
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .nav__button--menu {
+    visibility: hidden;
   }
 }

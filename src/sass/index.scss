@@ -1,12 +1,11 @@
-@forward "./normalize.css";
 @forward "./App.scss";
 @forward "./Header.scss";
-
+@use "./var.scss" as v;
 body {
+  font-family: v.$theme-font;
   background-color: #202020;
 }
 
 #root {
-  max-width: 960px;
-  min-width: 490px;
+  max-width: 1080px;
 }

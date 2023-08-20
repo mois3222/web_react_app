@@ -5,12 +5,12 @@
 .header {
   position: sticky;
   top: 0;
+  background-color: v.$theme-nav-background;
 
   .nav {
     @extend %flex;
     width: 95%;
     border-bottom: 2px solid v.$theme-primary;
-    background-color: v.$theme-nav-background;
 
     &__section {
       @extend %flex;
@@ -194,5 +194,9 @@
 
   .nav__button--menu {
     visibility: hidden;
+  }
+
+  .burger {
+    display: none;
   }
 }

@@ -22,7 +22,7 @@ function Header() {
           <ul className="nav__ul">
             <Link
               className="nav__li"
-              anchor={"Home"}
+              anchor={""}
               svg={<iconsController.IoMdHome size={"2em"} />}
             />
             <Link

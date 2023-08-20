@@ -1,5 +1,6 @@
 @forward "./App.scss";
 @forward "./Header.scss";
+@forward "./footer.scss";
 @use "./var.scss" as v;
 body {
   font-family: v.$theme-font;

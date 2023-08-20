@@ -1,0 +1,6 @@
+@use "./var.scss" as v;
+.footer {
+  font-family: v.$theme-font;
+  color: aliceblue;
+  margin-top: auto;
+}

@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { HTMLPropsAtributes } from "../modules/linkModule";
 
-const Link = ({ anchor, svg, ...props }: HTMLPropsAtributes) => {
-  const [buttonSwitch, SetButtonSwitch] = useState(false);
+const Link = ({ anchor, svg, category, ...props }: HTMLPropsAtributes) => {
+  const [active, setActive] = useState(false);
 
-  const tooggle = () => SetButtonSwitch(!buttonSwitch);
+  const toggle = () => setActive(!active);
   return (
     <>
       <li {...props}>
         <a
-          onClick={tooggle}
           href={`#/${anchor}`}
-          className={buttonSwitch ? `active` : `desactive`}
+          onClick={toggle}
+          className={` ${active ? "active" : "desactive"}`}
         >
           {svg}
+          <h4>{category}</h4>
         </a>
       </li>
     </>

@@ -1,4 +1,8 @@
-@mixin opacacity() {
+@mixin opacacity($boolean) {
   filter: grayscale(100%) opacity(0.7);
-  transition: ease-out 0.2s all;
+
+  @if ($boolean == 100) {
+    filter: grayscale(0%) opacity(0.1);
+    transition: ease-out 0.2s all;
+  }
 }

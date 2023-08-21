@@ -1,16 +1,3 @@
 @forward "./App.scss";
 @forward "./Header.scss";
-@forward "./footer.scss";
-@use "./var.scss" as v;
-body {
-  font-family: v.$theme-font;
-  background-color: #202020;
-}
-
-#root {
-  max-width: 1080px;
-}
-
-.text {
-  color: white;
-}
+@forward "./Footer.scss";

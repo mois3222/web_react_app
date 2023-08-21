@@ -1,5 +1,5 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./containers/Header";
+import Footer from "./containers/Footer";
 function App() {
   return (
     <div className="App">

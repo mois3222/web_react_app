@@ -1,0 +1,34 @@
+@use "../tools/extend.scss";
+@use "../tools/mixins.scss" as m;
+@use "../tools/var.scss" as v;
+.Header {
+  @include m.clean(1em, 1em);
+  .navbar {
+    @extend %flex;
+
+    /* Section navbar */
+    &__section {
+      /* Section menu button */
+      &:nth-child(1) {
+        @extend %flex;
+        width: 20%;
+      }
+      /* Section navegation */
+      &:nth-child(2) {
+        width: 80%;
+        ul {
+          @extend %flex;
+          @include m.clean();
+          list-style: none;
+          justify-content: space-around;
+          li {
+            a {
+              text-decoration: none;
+              color: v.$theme-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

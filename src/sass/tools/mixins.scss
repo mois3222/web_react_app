@@ -6,3 +6,8 @@
     transition: ease-out 0.2s all;
   }
 }
+
+@mixin clean($py: 0, $px: 0, $my: 0, $mx: 0) {
+  padding: $py $px;
+  margin: $my $mx;
+}

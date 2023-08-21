@@ -1,0 +1,6 @@
+@use "../tools/var.scss" as v;
+
+body {
+  background-color: v.$theme-background;
+  font-family: v.$theme-font;
+}

@@ -1,4 +1,4 @@
-@use "./var.scss" as v;
+@use "../tools/var.scss" as v;
 .footer {
   font-family: v.$theme-font;
   color: aliceblue;

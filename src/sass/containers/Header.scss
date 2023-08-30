@@ -2,30 +2,85 @@
 @use "../tools/mixins.scss" as m;
 @use "../tools/var.scss" as v;
 .Header {
-  @include m.clean(1em, 1em);
-  .navbar {
-    @extend %flex;
+  position: sticky;
+  top: 0;
+  @include m.clean(0.5em, 0.5em);
+}
 
-    /* Section navbar */
-    &__section {
-      /* Section menu button */
-      &:nth-child(1) {
+.navbar {
+  @extend %flex;
+  width: 90vw;
+  @include m.clean(0.5em, 0);
+
+  border-bottom: 1px solid v.$theme-primary;
+
+  /* Section navbar */
+  &__section {
+    /* Section menu button */
+    &:nth-child(1) {
+      @extend %flex;
+      width: 20%;
+      /* Button navbar */
+      button {
         @extend %flex;
-        width: 20%;
-      }
-      /* Section navegation */
-      &:nth-child(2) {
-        width: 80%;
-        ul {
+        flex-direction: column;
+        text-decoration: none;
+        background: transparent;
+        border: none;
+        color: v.$theme-secondary;
+        width: max-content;
+        div {
           @extend %flex;
-          @include m.clean();
-          list-style: none;
-          justify-content: space-around;
-          li {
-            a {
-              text-decoration: none;
-              color: v.$theme-secondary;
-            }
+          flex-direction: column;
+          width: 35px;
+          height: 70%;
+          gap: v.$min;
+          &::before {
+            content: "";
+            @extend %menu_navbar;
+          }
+          span {
+            @extend %menu_navbar;
+          }
+          &::after {
+            content: "";
+            @extend %menu_navbar;
+          }
+        }
+        .active {
+          &::before {
+            transform: rotate(45deg);
+          }
+          span {
+            opacity: 0;
+          }
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    /* Section navegation */
+    &:nth-child(2) {
+      width: 80%;
+      ul {
+        @extend %flex;
+        @include m.clean();
+        list-style: none;
+        justify-content: space-around;
+        /* Link Buttons */
+        li {
+          a {
+            @include m.opacacity();
+            width: max-content;
+            text-decoration: none;
+            color: v.$theme-secondary;
+          }
+          .active {
+            @include m.opacacity(99);
+          }
+          h4 {
+            @include m.clean();
           }
         }
       }

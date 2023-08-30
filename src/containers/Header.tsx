@@ -1,18 +1,15 @@
-import { useState } from "react";
 import Link from "../components/Link";
+import { useState } from "react";
 import iconsController from "../controller/iconsController";
 
 function Header() {
-  const [buttonSwitch, SetButtonSwitch] = useState(false);
-
-  const tooggle = () => SetButtonSwitch(!buttonSwitch);
-
+  const [bool, setBool] = useState<boolean>();
   return (
     <header className="Header">
       <nav className="Header__nav navbar">
         <section className="navbar__section">
-          <button onClick={tooggle}>
-            <div className={buttonSwitch ? `active` : `desactive`}>
+          <button onClick={() => setBool(!bool)}>
+            <div className={bool ? `active` : ""}>
               <span></span>
             </div>
           </button>

@@ -1,17 +1,30 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { HTMLPropsAtributes } from "../modules/linkModule";
+import { useToggleStore } from "../store/toggleStore";
 
 const Link = ({ anchor, svg, category, ...props }: HTMLPropsAtributes) => {
-  const [active, setActive] = useState(false);
+  const { toggle, setToggle } = useToggleStore();
+  const HTMLRefElement = useRef<HTMLAnchorElement>(null);
 
-  const toggle = () => setActive(!active);
+  let className = anchor === "" ? "Home" : anchor;
+
   return (
     <>
       <li {...props}>
         <a
           href={`#/${anchor}`}
-          onClick={toggle}
-          className={` ${active ? "active" : "desactive"}`}
+          onClick={() => {
+            console.log(HTMLRefElement.current?.className.includes(toggle!));
+
+            console.log(toggle);
+            return setToggle(HTMLRefElement);
+          }}
+          className={`${className} ${
+            HTMLRefElement.current?.className.includes(toggle!)
+              ? "active"
+              : "desactive"
+          }`}
+          ref={HTMLRefElement}
         >
           {svg}
           <h4>{category}</h4>

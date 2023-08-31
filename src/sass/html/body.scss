@@ -1,6 +1,8 @@
 @use "../tools/var.scss" as v;
+@use "../tools/mixins.scss" as m;
 
 body {
+  @include m.clean();
   background-color: v.$theme-background;
   font-family: v.$theme-font;
 }

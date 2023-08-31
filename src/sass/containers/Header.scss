@@ -4,12 +4,12 @@
 .Header {
   position: sticky;
   top: 0;
-  @include m.clean(0.5em, 0.5em);
+  @include m.clean(0.5em);
 }
 
 .navbar {
   @extend %flex;
-  width: 90vw;
+  width: 90%;
   @include m.clean(0.5em, 0);
 
   border-bottom: 1px solid v.$theme-primary;
@@ -81,6 +81,7 @@
           }
           h4 {
             @include m.clean();
+            display: none;
           }
         }
       }
@@ -89,24 +90,87 @@
 }
 
 .navres {
-  width: 45vw;
-  section {
-    ul {
-      @include m.clean();
-      list-style: none;
-      border: 1px solid v.$theme-primary;
-      border-top: 0;
+  width: 80vw;
+  height: 0;
 
-      li {
-        a {
+  ul {
+    @include m.clean();
+    @extend %flex;
+    padding-left: 1em;
+    flex-direction: column;
+    list-style: none;
+    border: 1px solid v.$theme-primary;
+    border-top: 0;
+    height: 100%;
+
+    li {
+      margin-bottom: auto;
+      margin-right: auto;
+      width: 70%;
+      display: none;
+
+      a {
+        @include m.opacacity();
+        @extend %flex;
+        justify-content: start;
+        text-decoration: none;
+        color: v.$theme-secondary;
+        svg {
+          margin-right: auto;
+        }
+        h4 {
+          @include m.clean();
+        }
+      }
+      .active {
+        @include m.opacacity(99);
+      }
+    }
+  }
+
+  &.show {
+    height: 70vh;
+    transition: all 0.5s ease;
+
+    li {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    section {
+      &:nth-child(2) {
+        ul {
           display: flex;
-          margin: auto;
-
-          h4 {
-            @include m.clean();
+          flex-wrap: row nowrap;
+          justify-content: end;
+          li {
+            &:first-child {
+              display: block;
+            }
+            display: none;
           }
         }
       }
+    }
+  }
+}
+@media (min-width: 760px) {
+  .navbar {
+    section {
+      &:nth-child(1) {
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .navres {
+    ul {
+      display: none;
     }
   }
 }

@@ -2,24 +2,19 @@ import { useRef } from "react";
 import { HTMLPropsAtributes } from "../modules/linkModule";
 import { useToggleStore } from "../store/toggleStore";
 
-const Link = ({ anchor, svg, category, ...props }: HTMLPropsAtributes) => {
+const Link = ({ anchor, svg, products, ...props }: HTMLPropsAtributes) => {
   const { toggle, setToggle } = useToggleStore();
   const HTMLRefElement = useRef<HTMLAnchorElement>(null);
 
-  let className = anchor === "" ? "Home" : anchor;
+  let className = anchor === "" ? "home" : anchor;
 
   return (
     <>
       <li {...props}>
         <a
           href={`#/${anchor}`}
-          onClick={() => {
-            console.log(HTMLRefElement.current?.className.includes(toggle!));
-
-            console.log(toggle);
-            return setToggle(HTMLRefElement);
-          }}
-          className={`${className} ${
+          onClick={() => setToggle(HTMLRefElement)}
+          className={`${className.toLocaleLowerCase()} ${
             HTMLRefElement.current?.className.includes(toggle!)
               ? "active"
               : "desactive"
@@ -27,7 +22,7 @@ const Link = ({ anchor, svg, category, ...props }: HTMLPropsAtributes) => {
           ref={HTMLRefElement}
         >
           {svg}
-          <h4>{category}</h4>
+          <h4>{products}</h4>
         </a>
       </li>
     </>

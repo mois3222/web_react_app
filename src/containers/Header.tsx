@@ -1,18 +1,13 @@
 import Link from "../components/Link";
-import { useState } from "react";
 import iconsController from "../controller/iconsController";
+import ButtonHome from "../components/ButtonHome";
 
-function Header() {
-  const [bool, setBool] = useState<boolean>();
+const Header = () => {
   return (
     <header className="Header">
       <nav className="Header__nav navbar">
         <section className="navbar__section">
-          <button onClick={() => setBool(!bool)}>
-            <div className={bool ? `active` : ""}>
-              <span></span>
-            </div>
-          </button>
+          <ButtonHome />
         </section>
         <section className="navbar__section">
           <ul>
@@ -44,8 +39,19 @@ function Header() {
           </ul>
         </section>
       </nav>
+      <nav className="Header_nav navres">
+        <section className="navres__section">
+          <ul>
+            <Link
+              anchor={"Discord"}
+              svg={<iconsController.RiDiscordLine size={"2em"} />}
+              products="Discord"
+            />
+          </ul>
+        </section>
+      </nav>
     </header>
   );
-}
+};
 
 export default Header;

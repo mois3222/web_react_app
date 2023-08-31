@@ -47,7 +47,7 @@
             @extend %menu_navbar;
           }
         }
-        .active {
+        .show {
           &::before {
             transform: rotate(45deg);
           }
@@ -79,6 +79,29 @@
           .active {
             @include m.opacacity(99);
           }
+          h4 {
+            @include m.clean();
+          }
+        }
+      }
+    }
+  }
+}
+
+.navres {
+  width: 45vw;
+  section {
+    ul {
+      @include m.clean();
+      list-style: none;
+      border: 1px solid v.$theme-primary;
+      border-top: 0;
+
+      li {
+        a {
+          display: flex;
+          margin: auto;
+
           h4 {
             @include m.clean();
           }

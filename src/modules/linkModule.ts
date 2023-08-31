@@ -1,6 +1,6 @@
 export interface Props {
   svg: JSX.Element;
-  category?: string;
+  products?: string;
   anchor: string;
 }
 

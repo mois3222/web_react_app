@@ -89,7 +89,7 @@
   }
 }
 
-.navres {
+.extensiblemenu {
   width: 80vw;
   height: 0;
 
@@ -107,7 +107,6 @@
       margin-bottom: auto;
       margin-right: auto;
       width: 70%;
-      display: none;
 
       a {
         @include m.opacacity();
@@ -127,15 +126,11 @@
       }
     }
   }
+}
 
-  &.show {
-    height: 70vh;
-    transition: all 0.5s ease;
-
-    li {
-      display: block;
-    }
-  }
+.show {
+  height: 70vh;
+  transition: all 0.5s ease;
 }
 
 @media (max-width: 760px) {
@@ -165,12 +160,6 @@
           display: none;
         }
       }
-    }
-  }
-
-  .navres {
-    ul {
-      display: none;
     }
   }
 }

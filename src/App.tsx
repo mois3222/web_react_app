@@ -1,12 +1,13 @@
 import Header from "./containers/Header";
 import Footer from "./containers/Footer";
-function App() {
+
+const App = () => {
   return (
     <div className="App">
       <Header />
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

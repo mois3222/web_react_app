@@ -1,4 +1,5 @@
-type RequestHttp = Pick<RequestInit, "headers" | "signal" | "method" | "body">;
+import RequestHttp from "../modules/requestHttp";
+import RequestHttpObj from "../modules/requestHttpObj";
 interface ParamRequestHttp {
   url?: string;
   options: RequestHttp;
@@ -11,7 +12,7 @@ class HelperHttp {
 
     private controller: AbortController = new AbortController()
   ) {}
-  private customFetch(enpoint: string = "", options: RequestHttp) {
+  private customFetch(enpoint: string = "", options: RequestHttpObj) {
     const defaultHeaders = {
       accept: "application/json",
     };
@@ -23,9 +24,6 @@ class HelperHttp {
     options.method = options.method || "GET";
 
     options.headers = options.headers ? merge : defaultHeaders;
-
-    options.body = JSON.stringify(options.body) || false;
-    if (!options.body) delete options.body;
 
     console.log(options);
     setTimeout(() => this.controller.abort(), 3000);

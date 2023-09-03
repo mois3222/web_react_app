@@ -11,6 +11,17 @@ class CrudApi {
       })
       .then((res) => res);
   }
+
+  async POST(data: { name: string; img: string; url: string; id?: number }) {
+    data.id = Date.now();
+
+    return await this.db.post({
+      options: {
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      },
+    });
+  }
   public static getInstance() {
     if (!CrudApi.instance) CrudApi.instance = new CrudApi();
     return CrudApi.instance;

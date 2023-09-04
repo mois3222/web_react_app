@@ -5,160 +5,148 @@
   position: sticky;
   top: 0;
   @include m.clean(0.5em);
-}
 
-.navbar {
-  @extend %flex;
-  width: 90%;
-  @include m.clean(0.5em, 0);
+  &__nav {
+    @extend %flex;
+    width: 90%;
+    @include m.clean(0.5em, 0);
+    border-bottom: 1px solid v.$theme-primary;
+  }
 
-  border-bottom: 1px solid v.$theme-primary;
-
-  /* Section navbar */
-  &__section {
-    /* Section menu button */
-    &:nth-child(1) {
+  &__section--home {
+    button {
       @extend %flex;
-      width: 20%;
-      /* Button navbar */
-      button {
-        @extend %flex;
-        flex-direction: column;
-        text-decoration: none;
-        background: transparent;
-        border: none;
-        color: v.$theme-secondary;
-        width: max-content;
-        div {
-          @extend %flex;
-          flex-direction: column;
-          width: 35px;
-          height: 70%;
-          gap: v.$min;
-          &::before {
-            content: "";
-            @extend %menu_navbar;
-          }
-          span {
-            @extend %menu_navbar;
-          }
-          &::after {
-            content: "";
-            @extend %menu_navbar;
-          }
+      flex-direction: column;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      color: v.$theme-secondary;
+      width: max-content;
+    }
+
+    div {
+      @extend %flex;
+      flex-direction: column;
+      width: 35px;
+      height: 70%;
+      gap: v.$min;
+      &::before {
+        content: "";
+        @extend %menu_navbar;
+      }
+      span {
+        @extend %menu_navbar;
+      }
+      &::after {
+        content: "";
+        @extend %menu_navbar;
+      }
+    }
+    .show {
+      &::before {
+        transform: rotate(45deg);
+      }
+      span {
+        opacity: 0;
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__section--navbar {
+    width: 80%;
+    ul {
+      @extend %flex;
+      @include m.clean();
+      list-style: none;
+      justify-content: space-around;
+      /* Link Buttons */
+      li {
+        a {
+          @include m.opacacity();
+          width: max-content;
+          text-decoration: none;
+          color: v.$theme-secondary;
         }
-        .show {
-          &::before {
-            transform: rotate(45deg);
-          }
-          span {
-            opacity: 0;
-          }
-          &::after {
-            transform: rotate(-45deg);
-          }
+        .active {
+          @include m.opacacity(99);
+        }
+        h3 {
+          @include m.clean();
+          display: none;
         }
       }
     }
-    /* Section navegation */
-    &:nth-child(2) {
-      width: 80%;
-      ul {
-        @extend %flex;
-        @include m.clean();
-        list-style: none;
-        justify-content: space-around;
-        /* Link Buttons */
-        li {
-          a {
-            @include m.opacacity();
-            width: max-content;
-            text-decoration: none;
-            color: v.$theme-secondary;
-          }
-          .active {
-            @include m.opacacity(99);
+  }
+
+  &__nav--extensible {
+    width: 80vw;
+    height: 0;
+
+    ul {
+      @include m.clean();
+      @extend %flex;
+      padding-left: 1em;
+      flex-direction: column;
+      list-style: none;
+      border: 1px solid v.$theme-primary;
+      border-top: 0;
+      height: 100%;
+
+      li {
+        margin-bottom: auto;
+        margin-right: auto;
+        width: 70%;
+
+        a {
+          @include m.opacacity();
+          @extend %flex;
+          justify-content: start;
+          text-decoration: none;
+          color: v.$theme-secondary;
+          svg {
+            margin-right: auto;
           }
           h4 {
             @include m.clean();
-            display: none;
           }
         }
-      }
-    }
-  }
-}
-
-.extensiblemenu {
-  width: 80vw;
-  height: 0;
-
-  ul {
-    @include m.clean();
-    @extend %flex;
-    padding-left: 1em;
-    flex-direction: column;
-    list-style: none;
-    border: 1px solid v.$theme-primary;
-    border-top: 0;
-    height: 100%;
-
-    li {
-      margin-bottom: auto;
-      margin-right: auto;
-      width: 70%;
-
-      a {
-        @include m.opacacity();
-        @extend %flex;
-        justify-content: start;
-        text-decoration: none;
-        color: v.$theme-secondary;
-        svg {
-          margin-right: auto;
-        }
-        h4 {
-          @include m.clean();
+        .active {
+          @include m.opacacity(99);
         }
       }
-      .active {
-        @include m.opacacity(99);
-      }
+    }
+    &.show {
+      height: 70vh;
+      transition: all 0.5s ease;
     }
   }
-}
-
-.show {
-  height: 70vh;
-  transition: all 0.5s ease;
 }
 
 @media (max-width: 760px) {
-  .navbar {
-    section {
-      &:nth-child(2) {
-        ul {
-          display: flex;
-          flex-wrap: row nowrap;
-          justify-content: end;
-          li {
-            &:first-child {
-              display: block;
-            }
-            display: none;
+  .Header {
+    &__section--navbar {
+      ul {
+        display: flex;
+        flex-wrap: row nowrap;
+        justify-content: end;
+        li {
+          &:first-child {
+            display: block;
           }
+          display: none;
         }
       }
     }
   }
 }
 @media (min-width: 760px) {
-  .navbar {
-    section {
-      &:nth-child(1) {
-        button {
-          display: none;
-        }
+  .Header {
+    &__section--home {
+      button {
+        display: none;
       }
     }
   }

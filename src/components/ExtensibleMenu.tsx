@@ -1,4 +1,4 @@
-import Link from "./Link";
+import NavLink from "./NavLink";
 import iconsController from "../controller/iconsController";
 import useShowStore from "../store/showStore";
 
@@ -6,32 +6,36 @@ const ExtensibleMenu = () => {
   const { show } = useShowStore();
   return (
     <>
-      <nav className={`Header_nav extensiblemenu ${show ? "show" : ""}`}>
+      <nav className={`Header__nav--extensible ${show ? "show" : ""}`}>
         <ul>
           {show ? (
             <>
-              <Link
-                anchor={"Discord"}
+              <NavLink
+                anchor={"discord"}
                 svg={<iconsController.RiDiscordLine size={"2em"} />}
               />
-              <Link
-                anchor={"Games"}
+              <NavLink
+                anchor={"games"}
                 svg={<iconsController.BiGame size={"2em"} />}
               />
-              <Link
-                anchor={"About"}
+              <NavLink
+                anchor={"about"}
                 svg={<iconsController.IoIosPeople size={"2em"} />}
               />
-              <Link
-                anchor={"Facebook"}
+              <NavLink
+                anchor={"facebook"}
                 svg={<iconsController.AiOutlineFacebook size={"2em"} />}
               />
-              <Link
-                anchor={"Instagram"}
+              <NavLink
+                anchor={"instagram"}
                 svg={<iconsController.TfiInstagram size={"2em"} />}
               />
-              <Link
-                anchor={"Twitter"}
+              <NavLink
+                anchor={"twitter"}
+                svg={<iconsController.FiTwitter size={"2em"} />}
+              />
+              <NavLink
+                anchor={"settings"}
                 svg={<iconsController.FiTwitter size={"2em"} />}
               />
             </>

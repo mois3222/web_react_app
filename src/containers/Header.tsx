@@ -1,4 +1,4 @@
-import Link from "../components/Link";
+import NavLink from "../components/NavLink";
 import iconsController from "../controller/iconsController";
 import ButtonHome from "../components/ButtonHome";
 import ExtensibleMenu from "../components/ExtensibleMenu";
@@ -6,36 +6,16 @@ import ExtensibleMenu from "../components/ExtensibleMenu";
 const Header = () => {
   return (
     <header className="Header">
-      <nav className="Header__nav navbar">
-        <section className="navbar__section">
+      <nav className="Header__nav">
+        <section className="Header__section--home">
           <ButtonHome />
         </section>
-        <section className="navbar__section">
-          <ul>
-            <Link anchor={""} svg={<iconsController.IoMdHome size={"2em"} />} />
-            <Link
-              anchor={"Discord"}
-              svg={<iconsController.RiDiscordLine size={"2em"} />}
-            />
-            <Link
-              anchor={"Games"}
-              svg={<iconsController.BiGame size={"2em"} />}
-            />
-            <Link
-              anchor={"About"}
-              svg={<iconsController.IoIosPeople size={"2em"} />}
-            />
-            <Link
-              anchor={"Facebook"}
-              svg={<iconsController.AiOutlineFacebook size={"2em"} />}
-            />
-            <Link
-              anchor={"Instagram"}
-              svg={<iconsController.TfiInstagram size={"2em"} />}
-            />
-            <Link
-              anchor={"Twitter"}
-              svg={<iconsController.FiTwitter size={"2em"} />}
+        <section className="Header__section--navbar">
+          <ul className="Header__ul">
+            <NavLink
+              anchor={""}
+              className="Header__li"
+              svg={<iconsController.IoMdHome size={"2em"} />}
             />
           </ul>
         </section>

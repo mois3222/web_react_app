@@ -1,11 +1,5 @@
-import Routes from "../routes/Routes";
-
 const Main = () => {
-  return (
-    <>
-      <Routes />
-    </>
-  );
+  return <h2>Menu!</h2>;
 };
 
 export default Main;

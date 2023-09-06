@@ -3,11 +3,13 @@
 @use "../tools/var.scss" as v;
 .Header {
   position: sticky;
+  // height: auto;
   top: 0;
-  @include m.clean(0.5em);
+  @include m.clean(0);
 
   &__container {
     position: absolute;
+    // position: sticky;
     background-color: v.$theme_background;
     // top: 0;
   }

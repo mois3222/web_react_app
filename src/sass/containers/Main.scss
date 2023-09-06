@@ -1,0 +1,60 @@
+@use "../tools/var.scss" as v;
+@use "../tools/extend.scss";
+.Main {
+  color: v.$theme-color;
+  @extend %flex;
+  min-height: 100vh;
+
+  /* Settings */
+  &__settings {
+    @extend %flex;
+    // height: ;
+    width: 70vw;
+    // width: auto;
+    flex-direction: column;
+  }
+
+  &__form {
+    @extend %flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  &__div {
+    @extend %flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid v.$theme-primary;
+    outline: none;
+    color: aliceblue;
+  }
+
+  &__span {
+    font-size: 14px;
+    color: red;
+  }
+
+  &__button {
+    border: 0;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 24px;
+    background-color: v.$theme-secondary;
+    border-bottom: 1px solid v.$theme-primary;
+  }
+
+  &__a {
+    text-decoration: none;
+    color: black;
+  }
+}

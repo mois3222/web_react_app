@@ -36,7 +36,7 @@ const ExtensibleMenu = () => {
               />
               <NavLink
                 anchor={"settings"}
-                svg={<iconsController.FiTwitter size={"2em"} />}
+                svg={<iconsController.FcSettings size={"2em"} />}
               />
             </>
           ) : null}

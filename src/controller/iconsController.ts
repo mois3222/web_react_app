@@ -5,6 +5,7 @@ import { IoIosPeople } from "react-icons/io";
 import { AiOutlineFacebook } from "react-icons/ai";
 import { TfiInstagram } from "react-icons/tfi";
 import { FiTwitter } from "react-icons/fi";
+import { FcSettings } from "react-icons/fc";
 
 const iconsController = {
   IoMdHome,
@@ -14,6 +15,7 @@ const iconsController = {
   AiOutlineFacebook,
   TfiInstagram,
   FiTwitter,
+  FcSettings,
 };
 
 export default iconsController;

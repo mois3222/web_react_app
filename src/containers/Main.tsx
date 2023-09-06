@@ -1,5 +1,13 @@
+import { Routes, Route } from "react-router-dom";
+import elementsController from "../controller/elementsController";
+
 const Main = () => {
-  return <h2>Menu!</h2>;
+  return (
+    <Routes>
+      <Route path="/" element={<elementsController.Home />} />
+      <Route path="/settings" element={<elementsController.Settings />} />
+    </Routes>
+  );
 };
 
 export default Main;

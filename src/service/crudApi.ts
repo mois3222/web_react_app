@@ -1,5 +1,5 @@
 import HelperHttp from "../helpers/helpHttp";
-
+import TGames from "../modules/games";
 class CrudApi {
   private static instance: CrudApi;
   private constructor(private db = HelperHttp.getInstace()) {}
@@ -12,9 +12,7 @@ class CrudApi {
       .then((res) => res);
   }
 
-  async POST(data: { name: string; img: string; url: string; id?: number }) {
-    data.id = Date.now();
-
+  async POST(data: TGames) {
     return await this.db.post({
       options: {
         body: JSON.stringify(data),

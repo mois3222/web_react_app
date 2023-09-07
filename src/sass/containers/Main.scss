@@ -57,4 +57,98 @@
     text-decoration: none;
     color: black;
   }
+
+  &__settings--home {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    gap: 0;
+
+    padding-top: 8rem;
+
+    article {
+      @extend %flex;
+      // justify-content:;
+      width: 100%;
+      height: 100%;
+      padding: 1em;
+      border-radius: 24px;
+
+      div {
+        h3 {
+          margin: 0;
+          padding: 0 0.5em;
+        }
+        &:nth-child(1) {
+          @extend %flex;
+          flex-direction: column;
+          button {
+            border: 0;
+            width: 100%;
+            padding: 0.5em;
+            border-radius: 8px;
+            background: transparent;
+            margin-top: 1em;
+          }
+
+          border: 1px solid;
+          border-top-left-radius: 24px;
+          border-bottom-left-radius: 24px;
+          // border: 1px solid white;
+          height: 70%;
+        }
+
+        &:nth-child(2) {
+          @extend %flex;
+          border: 1px solid;
+          width: 60%;
+          height: 70%;
+
+          p {
+            margin: 0;
+            padding: 1em;
+          }
+        }
+      }
+      // object-fit: cover;
+    }
+  }
+
+  &__GET {
+    color: #27ae60;
+    button {
+      color: #27ae60;
+      cursor: pointer;
+    }
+  }
+  &__POST {
+    color: orange;
+    button {
+      color: orange;
+      cursor: pointer;
+    }
+  }
+  &__UPDATE {
+    color: yellow;
+    button {
+      color: yellow;
+      cursor: pointer;
+    }
+  }
+  &__DELETE {
+    color: red;
+    button {
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  &__span--req {
+    margin-top: 1em;
+    padding: 0 0.5em;
+  }
 }

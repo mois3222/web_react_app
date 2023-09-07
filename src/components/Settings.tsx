@@ -35,7 +35,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="Main__settings">
+    <section className="Main__settings">
       <form className="Main__form" onSubmit={handleSubmit}>
         <h2>Sign in</h2>
 
@@ -82,7 +82,7 @@ const Settings = () => {
           )}
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 

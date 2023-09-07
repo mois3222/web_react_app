@@ -1,6 +1,34 @@
 @use "../tools/var.scss" as v;
+@use "../tools/extend.scss";
 .footer {
   font-family: v.$theme-font;
   color: aliceblue;
-  margin-top: auto;
+  margin-top: 10%;
+  // margin-top: ;
+  background-color: v.$theme-primary;
+  padding: 3em;
+
+  nav {
+    @extend %flex;
+    ul {
+      @extend %flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  h4 {
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  article {
+    @extend %flex;
+    flex-direction: column;
+  }
 }

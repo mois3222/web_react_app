@@ -149,9 +149,12 @@
 
   &__home {
     @extend %flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     padding-left: 0.5em;
+    height: 100vh;
+    gap: 57px;
   }
 
   &__span--req {
@@ -167,6 +170,7 @@
     overflow-y: hidden;
     position: relative;
     scroll-snap-type: x mandatory;
+    // margin-top: 60%;
 
     img {
       border-radius: 28px;
@@ -176,6 +180,34 @@
       // height: 600px;
       object-fit: contain;
       left: 0;
+    }
+  }
+
+  &__play {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    h2 {
+      margin: 0;
+    }
+    // bottom: 0;
+
+    a {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: v.$theme-secondary;
+      h2 {
+        // font-size: larger;
+        margin: 0;
+        font-weight: bold;
+      }
+      svg {
+        scale: 2;
+      }
     }
   }
 }

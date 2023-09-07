@@ -6,6 +6,7 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import { TfiInstagram } from "react-icons/tfi";
 import { FiTwitter } from "react-icons/fi";
 import { FcSettings } from "react-icons/fc";
+import { PiGameControllerDuotone } from "react-icons/pi";
 
 const iconsController = {
   IoMdHome,
@@ -16,6 +17,7 @@ const iconsController = {
   TfiInstagram,
   FiTwitter,
   FcSettings,
+  PiGameControllerDuotone,
 };
 
 export default iconsController;

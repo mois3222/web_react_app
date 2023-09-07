@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import iconsController from "../controller/iconsController";
 import TGames from "../modules/games";
 
 type TGamesArr = Record<"games", TGames[]>;
@@ -32,6 +33,14 @@ const Home = () => {
             className={game.name}
           />
         ))}
+      </div>
+      <div className="Main__play">
+        <h2>{gameList ? gameList[0].name + " Demo" : "Mini Switcher Demo"}</h2>
+
+        <a href="/">
+          <h2>Play Now!</h2>
+          <iconsController.PiGameControllerDuotone />
+        </a>
       </div>
     </section>
   );

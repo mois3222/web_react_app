@@ -147,8 +147,35 @@
     }
   }
 
+  &__home {
+    @extend %flex;
+    width: 100%;
+    justify-content: center;
+    padding-left: 0.5em;
+  }
+
   &__span--req {
     margin-top: 1em;
     padding: 0 0.5em;
+  }
+
+  &__slider {
+    display: flex;
+    overflow: scroll;
+    aspect-ratio: 9/ 14;
+    width: 340px;
+    overflow-y: hidden;
+    position: relative;
+    scroll-snap-type: x mandatory;
+
+    img {
+      border-radius: 28px;
+      margin-right: 2em;
+      scroll-snap-align: center;
+      // width: 300px;
+      // height: 600px;
+      object-fit: contain;
+      left: 0;
+    }
   }
 }

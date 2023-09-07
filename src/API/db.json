@@ -3,70 +3,70 @@
     {
       "id": 1,
       "name": "Zrist",
-      "img": "imgs/zrist-back.jpg",
+      "img": "public/zrist-back.jpg",
       "url": "https://html5.gamemonetize.com/iyq1x3g396ik7vhf71czo9ubmjrimzd4/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 2,
       "name": "Mini Switcher",
-      "img": "imgs/miniswitcher-back.jpg",
+      "img": "public/miniswitcher-back.jpg",
       "url": "https://html5.gamemonetize.com/r822rwum14259b7wacvt1acbp3e4jv4a/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 3,
       "name": "FireBlob",
-      "img": "imgs/fireblob-back.jpg",
+      "img": "public/fireblob-back.jpg",
       "url": "https://html5.gamemonetize.com/18maefikrn6r5isrep10icvc6lzfrfft/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 4,
       "name": "Mini Blocks",
-      "img": "imgs/miniblocks-back.jpg",
+      "img": "public/miniblocks-back.jpg",
       "url": "https://html5.gamemonetize.com/a3g08anaetn716zmnmike7tvgokee4ip/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 5,
       "name": "Mini Colors",
-      "img": "imgs/minicolors-back.jpg",
+      "img": "public/minicolors-back.jpg",
       "url": "https://html5.gamemonetize.com/qdi48bsj1weirf128p32hoagcw2q9kr0/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 6,
       "name": "Emerald And Amber",
-      "img": "imgs/emeraldandamber-back.jpg",
+      "img": "public/emeraldandamber-back.jpg",
       "url": "https://html5.gamemonetize.com/qjyxz4nan9jjcwed12rspodfjqrsc773/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 7,
       "name": "Mini Push",
-      "img": "imgs/minipush-back.jpg",
+      "img": "public/minipush-back.jpg",
       "url": "https://html5.gamemonetize.com/fkcezxby2ig5nff714fgjvc287a7cd7s/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 8,
       "name": "FireBlob Winter",
-      "img": "imgs/fireblobwinter-back.jpg",
+      "img": "public/fireblobwinter-back.jpg",
       "url": "https://html5.gamemonetize.com/pj05r8tubjj0ukl65o5t9ha5pp111a2r/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 9,
       "name": "Gum Adventures DX",
-      "img": "imgs/gumdx-back.jpg",
+      "img": "public/gumdx-back.jpg",
       "url": "https://html5.gamemonetize.com/ej2w8vnngsep8kcqsfxae8iyg6ghuci9/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     },
     {
       "id": 10,
       "name": "Mini Arrows",
-      "img": "imgs/miniarrows-back.jpg",
+      "img": "public/miniarrows-back.jpg",
       "url": "https://html5.gamemonetize.com/f1eta6xj4p282uxtt4fomstuq9sbkwcz/",
       "createAdt": "2023-09-07T00:47:46.295Z"
     }
